@@ -1,0 +1,17 @@
+import numpy as np
+from sklearn.impute import SimpleImputer
+
+# Sample data with missing values
+X = np.array([
+    [1, 2, np.nan],
+    [4, np.nan, 6],
+    [7, 8, 9]
+])
+
+# Create the imputer (mean strategy)
+imputer = SimpleImputer(strategy="mean")
+
+# Fit and transform the data
+X_imputed = imputer.fit_transform(X)
+
+print(X_imputed)
